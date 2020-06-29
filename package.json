@@ -7,6 +7,17 @@
     "test": "jest",
     "pretty": "prettier --write --tab-width 4 \"src/**/*.js\""
   },
+  "lint-staged": {
+    "*.js": [
+      "npm run pretty",
+      "git add"
+    ]
+  },
+  "husky": { 
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
